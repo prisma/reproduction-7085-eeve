@@ -3,6 +3,10 @@ import { PrismaClient } from '@prisma/client'
 const prisma = new PrismaClient()
 
 async function main() {
+  await prisma.AuthorizesOnCloudApps.deleteMany()
+  await prisma.cloudAppAuthorize.deleteMany()
+  await prisma.cloudApp.deleteMany()
+  
   const app = {
     id: '1pqTcsnO5675ZHM7-qu31_aUakQdkHalj-h5'
   }
